@@ -4,6 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+// function AppTwo(){
+//   return <h1>App Two</h1>
+// }
+
+// <React.Fragment></React.Fragment> - Instead of using React.Fragment we can just use the empty angle
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

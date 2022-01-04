@@ -43,18 +43,44 @@ const dishes = [
 const dishObject = dishes.map((dish, i) => ({ id: i, title: dish }));
 console.log(dishObject);
 
+function CreditCard() {
+  return (
+    <h3 style={{ color: "green" }}>
+      You can pay using your credit Card for the bills.
+    </h3>
+  );
+}
+
+function CashPayment() {
+  return (
+    <h3 style={{ color: "red" }}>
+      You can only make payments for the bills using Cash.
+    </h3>
+  );
+}
+function Info(props) {
+  if (!props.creditCard) {
+    return <CreditCard />;
+  } else {
+    return <CashPayment />;
+  }
+}
+
 function App() {
   return (
     <div className="App">
       <Header name="Joseph Mbote" />
       <img
         src={"https://github.com/Mbote-Joseph.png"}
-        height="100px"
+        height={100}
         style={{ borderRadius: "100px" }}
+        alt="The Github image Mbote-Joseph"
       />
       <Main adjective="amazing" dishes={dishObject} />
 
-      <img src={photo} />
+      <img src={photo} alt="3D image" />
+
+      <Info creditCard={false} />
 
       <Footer year={new Date().getFullYear()} />
     </div>
