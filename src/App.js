@@ -1,7 +1,11 @@
+import React from "react";
 import "./App.css";
+import Destructure from "./Destructure";
+import Emotion from "./Emotion";
 import photo from "./photo.jpg";
+import UseReducer from "./UseReducer";
 function Header(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <header>
       <h1>{props.name}'s Kitchen</h1>
@@ -58,13 +62,31 @@ function CashPayment() {
     </h3>
   );
 }
-function Info(props) {
-  if (!props.creditCard) {
-    return <CreditCard />;
-  } else {
-    return <CashPayment />;
-  }
+function Info({ creditCard }) {
+  // if (!props.creditCard) {
+  //   return <CreditCard />;
+  // } else {
+  //   return <CashPayment />;
+  // }
+
+  // Using a ternary expression
+  return (
+    <React.Fragment>
+      {creditCard ? <CreditCard /> : <CashPayment />}
+    </React.Fragment>
+  );
 }
+
+// const [company1, company2, company3, company4] = [
+//   "Tesla",
+//   "SpaceX",
+//   "Paypal",
+//   "SolarCity",
+// ];
+// console.log(company1, company2, company3, company4);
+
+const companies = ["Tesla", "SpaceX", "Paypal", "SolarCity"];
+// console.log(company1, company2, company3, company4);
 
 function App() {
   return (
@@ -82,6 +104,13 @@ function App() {
 
       <Info creditCard={false} />
 
+      <br></br>
+      <hr />
+      <Destructure companies={companies} />
+      <hr />
+      <Emotion />
+      <hr />
+      <UseReducer />
       <Footer year={new Date().getFullYear()} />
     </div>
   );
