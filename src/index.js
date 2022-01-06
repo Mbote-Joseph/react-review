@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
 
 // function AppTwo(){
 //   return <h1>App Two</h1>
@@ -11,9 +12,9 @@ import reportWebVitals from "./reportWebVitals";
 // <React.Fragment></React.Fragment> - Instead of using React.Fragment we can just use the empty angle
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
     <App />
-  </React.StrictMode>,
+  </Router>,
   document.getElementById("root")
 );
 

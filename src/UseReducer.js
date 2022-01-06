@@ -1,4 +1,7 @@
-import React, { useState, useReducer } from "react";
+import React, {
+  // useState,
+  useReducer,
+} from "react";
 
 function UseReducer() {
   const [checked, toggle] = useReducer((checked) => !checked, false);
