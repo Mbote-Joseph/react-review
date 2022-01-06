@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Destructure from "./Destructure";
 import Emotion from "./Emotion";
+import Github from "./Github";
 import photo from "./photo.jpg";
 import UseReducer from "./UseReducer";
 function Header(props) {
@@ -111,6 +112,9 @@ function App() {
       <Emotion />
       <hr />
       <UseReducer />
+
+      <hr />
+      <Github login="Mbote-Joseph" />
       <Footer year={new Date().getFullYear()} />
     </div>
   );
